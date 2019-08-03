@@ -107,6 +107,27 @@ body {
 
 /* end Square Jiggle */
 
+/* Display Square: opaque square on hover */
+
+.squareDisplay {
+  display: none;
+}
+
+.square:hover .squareDisplay {
+  display: block;
+  text-shadow: 5px 0px rgb(111,111,111, .3);
+}
+
+#display-o-square {
+  color: rgb(255,129,144,.3);
+}
+
+#display-x-square {
+  color: rgb(213,255,148, .3);
+}
+
+/* end Display Square */
+
 #x-square {
   color: #d5ff94;
 }

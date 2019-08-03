@@ -5,13 +5,27 @@ import * as utils from './utilities.js'
 
 
 function Square(props) {
+  let squareID, display;
+  if (props.value) {
+      squareID = props.value === 'X' ? "x-square" : "o-square"
+      display = <span>{props.value}</span>
+  }
+  else {
+    display = <span
+      className="squareDisplay"
+      id={props.xIsNext ? 'display-x-square': 'display-o-square'}
+    >
+      {props.xIsNext ? 'X': 'O'}
+    </span>
+  }
+
   return (
     <button
       className={props.winningSquare ? "square winningSquare" : "square"}
-      id={props.value === 'X' ? "x-square" : "o-square"}
+      id={squareID}
       onClick={props.onClick}
     >
-      {props.value}
+      {display}
     </button>
   );
 }
@@ -24,6 +38,7 @@ class Board extends React.Component {
         value={this.props.squares[i]}
         winningSquare={this.props.winningSquares.includes(i)}
         onClick={() => this.props.onClick(i)}
+        xIsNext={this.props.xIsNext}
       />
     );
   }
@@ -205,6 +220,7 @@ class Game extends React.Component {
                 squares={current.squares}
                 winningSquares={winningSquares}
                 onClick={(i) => this.handleClick(i)}
+                xIsNext={this.state.xIsNext}
               />
             </div>
           </div>
