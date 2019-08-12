@@ -48,19 +48,26 @@ body {
 
 .square {
   background-color: #d4bcf5;
-  border: 3px solid #969696;
+  border: 2px solid #969696;
   float: left;
   text-shadow: 5px 0px 0 #6f6f6f;
-  font-size: 75px;
-  font-weight: bold;
-  line-height: 34px;
-  height: 150px;
   margin-right: -1px;
   margin-top: -1px;
-  padding: 0;
-  text-align: center;
-  width: 150px;
   border-radius: 25px;
+}
+
+.square, .squareDisplay, .fakeSquareDisplay{
+  height: 150px;
+  width: 150px;
+  padding: 2px 2px 0px 0px; /* 2px top/right needed to offset text-shadow */
+}
+
+.squareDisplay, .fakeSquareDisplay{
+  font-size: 75px;
+  font-weight: bold;
+  vertical-align: middle;
+  text-align: center;
+  line-height: 150px;
 }
 
 .winningSquare{
@@ -107,22 +114,22 @@ body {
 
 /* end Square Jiggle */
 
-/* Display Square: opaque square on hover */
+/* Fake Square: opaque square on hover */
 
-.squareDisplay {
+.fakeSquareDisplay {
   display: none;
 }
 
-.square:hover .squareDisplay {
+.square:hover .fakeSquareDisplay {
   display: block;
   text-shadow: 5px 0px rgb(111,111,111, .3);
 }
 
-#display-o-square {
+#fake-o-square {
   color: rgb(255,129,144,.3);
 }
 
-#display-x-square {
+#fake-x-square {
   color: rgb(213,255,148, .3);
 }
 

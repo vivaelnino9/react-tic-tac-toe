@@ -5,27 +5,31 @@ import * as utils from './utilities.js'
 
 
 function Square(props) {
-  let squareID, display;
+  let squareDisplayID, squareDisplayClass, squareDisplayText;
   if (props.value) {
-      squareID = props.value === 'X' ? "x-square" : "o-square"
-      display = <span>{props.value}</span>
+    squareDisplayID = props.value === "X" ? "x-square" : "o-square"
+    squareDisplayClass = "squareDisplay"
+    squareDisplayText = props.value
   }
   else {
-    display = <span
-      className="squareDisplay"
-      id={props.xIsNext ? 'display-x-square': 'display-o-square'}
-    >
-      {props.xIsNext ? 'X': 'O'}
-    </span>
+    squareDisplayID = props.xIsNext ? "fake-x-square": "fake-o-square"
+    squareDisplayClass = "fakeSquareDisplay"
+    squareDisplayText = props.xIsNext ? 'X': 'O'
   }
+
+  const squareDisplay = <div
+    id={squareDisplayID}
+    className={squareDisplayClass}
+    >
+    {squareDisplayText}
+  </div>
 
   return (
     <button
       className={props.winningSquare ? "square winningSquare" : "square"}
-      id={squareID}
       onClick={props.onClick}
     >
-      {display}
+      {squareDisplay}
     </button>
   );
 }
