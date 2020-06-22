@@ -50,24 +50,22 @@ body {
   background-color: #d4bcf5;
   border: 2px solid #969696;
   float: left;
-  text-shadow: 5px 0px 0 #6f6f6f;
   margin-right: -1px;
   margin-top: -1px;
   border-radius: 25px;
 }
 
-.square, .squareDisplay, .fakeSquareDisplay{
+.square{
   height: 150px;
   width: 150px;
-  padding: 2px 2px 0px 0px; /* 2px top/right needed to offset text-shadow */
+  padding: 0px 1px 0px 0px; /* 1px right needed to offset text-shadow */
 }
 
 .squareDisplay, .fakeSquareDisplay{
   font-size: 75px;
   font-weight: bold;
-  vertical-align: middle;
-  text-align: center;
   line-height: 150px;
+  text-shadow: 5px 0px 0 #6f6f6f;
 }
 
 .winningSquare{
